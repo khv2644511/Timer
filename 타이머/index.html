@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">TIMER</div>
+        <hr class="hr" />
+        <div class="time_area">
+            <div class="time_component">
+                <span class="caption">HRS</span>
+                <button id="hour" type="submit">
+                    <img src="./images/box.png" alt="" />
+                    <p id="hour_txt" class="time">00</p>
+                </button>
+            </div>
+            <img class="dot" src="./images/dot.png" alt="" />
+            <div class="time_component">
+                <span class="caption">MIN</span>
+                <button id="min" type="submit">
+                    <img src="./images/box.png" alt="" />
+                    <p id="min_txt" class="time">00</p>
+                </button>
+            </div>
+            <img class="dot" src="./images/dot.png" alt="" />
+            <div class="time_component">
+                <span class="caption">SEC</span>
+                <button id="sec" type="submit">
+                    <img src="./images/box.png" alt="" />
+                    <p id="sec_txt" class="time">00</p>
+                </button>
+
+            </div>
+        </div>
+        <div class="button">
+            <button id="start_btn" type="button">
+                <img class="start_btn" src="./images/button/start-disabled.png" alt="" />
+            </button>
+            <button id="reset_btn">
+                <img class="" src="./images/button/reset-disabled.png" alt="" />
+            </button>
+            <button id="start_btn_df" class="hidden">
+                <img class="" src="./images/button/start-default.png" alt="" />
+            </button>
+            <button id="reset_btn_df" class="hidden">
+                <img class="" src="./images/button/reset-default.png" alt="" />
+            </button>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

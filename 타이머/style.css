@@ -1,0 +1,119 @@
+/** @format */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+button:active {
+  outline: inherit;
+  border: 1px solid #fff;
+}
+
+.container {
+  position: relative;
+  background: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+  width: 400px;
+  height: 360px;
+  margin: 180px auto;
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+  border-radius: 16px;
+}
+
+.title {
+  position: absolute;
+  color: #fff;
+  margin: 0 auto;
+  width: 73px;
+  height: 29px;
+  left: 163px;
+  top: 48px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.hr {
+  position: absolute;
+  display: block;
+  width: 312px;
+  height: 1px;
+  top: 100px;
+  left: 44px;
+  border: 1px solid #3d538a;
+}
+
+.time_area {
+  display: flex;
+  position: absolute;
+  top: 140px;
+  left: 58px;
+  gap: 8px;
+  align-items: center;
+}
+
+.caption {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #a5b6ee;
+}
+
+.time_component {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.time {
+  position: absolute;
+  width: 53px;
+  height: 48px;
+  left: calc(50% - 53px / 2 - 0.5px);
+  bottom: 10px;
+  /* Bold_40px */
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+}
+
+.dot {
+  position: relative;
+  height: fit-content;
+  /* top: 78px; */
+}
+
+.button {
+  display: flex;
+  position: absolute;
+  top: 272px;
+  left: 82px;
+  gap: 12px;
+}
+
+/*  */
+.hidden {
+  display: none;
+}
