@@ -28,25 +28,16 @@ function addSec() {
   $reset_btn_df.style.display = "block";
 }
 
-let sec = 0;
-let preSec;
+let num = 0;
 function startTimer() {
-  //   let time = new Date();
-  //   sec = time.getSeconds();
-  //   preSec = time.getSeconds() - 1;
-  //   console.log(sec, preSec);
-
-  console.log(i);
-  while (sec > 0) {
-    let i = parseInt($sec_txt.innerText);
-    // i--;
-    let time = new Date();
-    sec = time.getSeconds();
-    // console.log(i);
-    // console.log(sec);
-    $sec_txt.innerText = `${i}`;
-    // if (i == 0) {
-    //   break;
-    // }
-  }
+  setInterval(() => {
+    num++;
+    let time = parseInt(i) - num;
+    $sec_txt.innerText = time;
+    console.log(i - num);
+    if (time == 0) {
+      console.log("0이다!!!");
+      $sec_txt.innerText = "00";
+    }
+  }, 1000);
 }
