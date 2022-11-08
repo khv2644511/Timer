@@ -12,6 +12,8 @@ $sec.addEventListener("click", addSec);
 $start_btn_df.addEventListener("click", startTimer);
 
 let i = 0;
+
+// 초 클릭 시 10초씩 증가
 function addSec() {
   console.log("c");
   if (i < 60) {
@@ -29,14 +31,22 @@ function addSec() {
 }
 
 let num = 0;
+
+// start 클릭 시 초 타이머 작동
 function startTimer() {
+  let time = parseInt(i);
+
   setInterval(() => {
-    num++;
-    let time = parseInt(i) - num;
-    $sec_txt.innerText = time;
-    console.log(i - num);
-    if (time == 0) {
-      console.log("0이다!!!");
+    if (time > 1) {
+      num++;
+      time = parseInt(i) - num;
+      $sec_txt.innerText = time;
+      console.log(time);
+      // if (time == 0) {
+      //   console.log("0이다!!!");
+      //   $sec_txt.innerText = "00";
+      // }
+    } else if (time == 1) {
       $sec_txt.innerText = "00";
     }
   }, 1000);
