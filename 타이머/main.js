@@ -15,6 +15,15 @@ const $reset_btn = document.querySelector("#reset_btn");
 const $start_btn_df = document.querySelector("#start_btn_df");
 const $reset_btn_df = document.querySelector("#reset_btn_df");
 
+let hour = 0;
+let min = 0;
+let sec = 0;
+let num = 0;
+let sec_time = 0;
+
+// timer : 다른 함수에서 clearInterval을 사용하기 위해 전역변수로 선언 (나중에 setInterval 할당);
+let timer;
+
 $hour.addEventListener("click", addHour);
 $min.addEventListener("click", addMinc);
 $sec.addEventListener("click", addSec);
@@ -22,9 +31,38 @@ $sec.addEventListener("click", addSec);
 $start_btn_df.addEventListener("click", startTimer);
 $reset_btn_df.addEventListener("click", resetTimer);
 
-let hour = 0;
-let min = 0;
-let sec = 0;
+// start 클릭 시 초 타이머 작동
+function startTimer() {
+  // sec은 내가 시작하길 원하는 초
+  // sec_time은 줄어들 값
+  sec_time = parseInt(sec);
+  min_time = parseInt(min);
+  // 초만 있을 때
+  timer = setInterval(() => {
+    if (sec_time > 1) {
+      --sec_time;
+      $sec_txt.innerText = sec_time;
+      // console.log(sec_time);
+    } else if (sec_time == 1) {
+      console.log(sec_time);
+      sec_time = 0;
+      $sec_txt.innerText = "00";
+    }
+    // 초가 0이 되었을 때 분이 1 이상이면 초에 60을 할당
+    else if (min_time >= 1 && sec_time == 0) {
+      console.log(min);
+      sec_time = 60;
+      $sec_txt.innerText = 59;
+      sec_time--;
+      min_time--;
+      $min_txt.innerText = min_time;
+      // console.log(sec_time);
+      if (min_time == 0) {
+        $min_txt.innerText = "00";
+      }
+    }
+  }, 1000);
+}
 
 function addHour() {
   console.log("c");
@@ -47,7 +85,7 @@ function addMinc() {
   if (min < 60) {
     min += 1;
     $min_txt.innerText = `${min}`;
-  } else if (i >= 60) {
+  } else if (min >= 60) {
     min = 0;
     $min_txt.innerText = `${min}0`;
   }
@@ -75,27 +113,11 @@ function addSec() {
   $reset_btn_df.style.display = "block";
 }
 
-let num = 0;
-
-// start 클릭 시 초 타이머 작동
-function startTimer() {
-  let time = parseInt(sec);
-  let setIntervalFunc = setInterval(() => {
-    if (time > 1) {
-      num++;
-      time = parseInt(sec) - num;
-      $sec_txt.innerText = time;
-      console.log(time);
-    } else if (time == 1) {
-      $sec_txt.innerText = "00";
-    }
-  }, 1000);
-}
 function stopTimer() {
-  clearInterval(setIntervalFunc);
+  // clearInterval(setIntervalFunc);
 }
 
 function resetTimer() {
   $sec_txt.innerText = "00";
-  clearInterval(setIntervalFunc);
+  clearInterval(timer);
 }
